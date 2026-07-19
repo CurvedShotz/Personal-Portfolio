@@ -1,42 +1,40 @@
-// main.js - Handles dark/light mode and animations
-
-document.addEventListener('DOMContentLoaded', function () {
-  const modeToggle = document.getElementById('modeToggle');
+document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
-  function setMode(dark) {
-    if (dark) {
-      body.classList.add('dark');
-      modeToggle.textContent = '☀️';
-    } else {
-      body.classList.remove('dark');
-      modeToggle.textContent = '🌙';
-    }
-  }
-  // Check for saved mode
-  const savedMode = localStorage.getItem('darkMode');
-  setMode(savedMode === 'true');
+  const modeToggle = document.getElementById('modeToggle');
+  const storedMode = localStorage.getItem('lightMode');
+
+  const setMode = (isLight) => {
+    body.classList.toggle('light', isLight);
+    modeToggle.textContent = isLight ? '🌙' : '☀️';
+    localStorage.setItem('lightMode', String(isLight));
+  };
+
+  setMode(storedMode === 'true');
+
   modeToggle.addEventListener('click', () => {
-    const isDark = !body.classList.contains('dark');
-    setMode(isDark);
-    localStorage.setItem('darkMode', isDark);
+    const isLight = !body.classList.contains('light');
+    setMode(isLight);
   });
 
-  // Section reveal animations on scroll
-  const revealEls = document.querySelectorAll('section, .card, .github-project');
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.92;
-    revealEls.forEach(el => {
-      const boxTop = el.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        el.style.opacity = 1;
-        el.style.transform = 'none';
-        el.style.transition = 'opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1)';
-      } else {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(40px)';
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
       }
     });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
+  }, { threshold: 0.14 });
+
+  revealEls.forEach((el) => observer.observe(el));
+
+  const parallaxTargets = document.querySelectorAll('[data-parallax]');
+  window.addEventListener('pointermove', (event) => {
+    const x = (event.clientX / window.innerWidth - 0.5) * 14;
+    const y = (event.clientY / window.innerHeight - 0.5) * 14;
+
+    parallaxTargets.forEach((target, index) => {
+      const intensity = (index + 1) * 0.5;
+      target.style.transform = `translate3d(${x * intensity}px, ${y * intensity}px, 0)`;
+    });
+  });
 }); 
