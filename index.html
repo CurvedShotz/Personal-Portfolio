@@ -22,10 +22,10 @@
           <span>Daniel Olowe</span>
         </a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#stack">Stack</a>
           <a href="#projects">Projects</a>
+          <a href="#stack">Stack</a>
           <a href="#credentials">Credentials</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
         <button class="mode-toggle" id="modeToggle" aria-label="Toggle light and dark mode">🌙</button>
@@ -63,6 +63,56 @@
         </aside>
       </section>
 
+      <section class="section reveal" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects that balance technical depth with user clarity.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-card-featured glass">
+            <a class="featured-preview-link" href="https://autoscout.danielolowe.com/" target="_blank" rel="noopener noreferrer" aria-label="Open the live AutoScout AI website">
+              <span class="preview-browser-bar" aria-hidden="true">
+                <span class="preview-browser-dots"><i></i><i></i><i></i></span>
+                <span class="preview-browser-url">autoscout.danielolowe.com</span>
+                <span class="preview-browser-icon">↗</span>
+              </span>
+              <img src="assets/autoscout-preview.png" alt="Preview of AutoScout's natural-language vehicle search interface" />
+            </a>
+            <div class="featured-project-details">
+              <div class="project-top">
+                <span class="project-badge">AI Vehicle Search</span>
+                <span class="project-live"><i></i>Live</span>
+              </div>
+              <h3>AutoScout AI</h3>
+              <p>AI-powered car search that turns natural-language requests into live vehicle searches, ranks listings by user fit, and independently analyzes listing risk.</p>
+              <p class="project-tech"><span>Python</span><span>FastAPI</span><span>Next.js</span><span>TypeScript</span><span>Gemini</span><span>Auto.dev</span><span>Vercel</span><span>Render</span></p>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://autoscout.danielolowe.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="btn btn-secondary" href="https://github.com/CurvedShotz/autoscout-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <span class="project-badge">RAG Systems</span>
+              <a href="https://github.com/CurvedShotz/AI_PDF_SUMMARIZER" target="_blank" rel="noopener noreferrer">Open repo</a>
+            </div>
+            <h3>AI PDF Summarizer</h3>
+            <p>Document QA and summarization workflow built around retrieval-augmented generation and practical LLM reasoning.</p>
+          </article>
+
+          <article class="project-card glass">
+            <div class="project-top">
+              <span class="project-badge">Wear OS · Health AI</span>
+              <a href="https://github.com/CurvedShotz/asclepius-wear-os" target="_blank" rel="noopener noreferrer">Open repo</a>
+            </div>
+            <h3>Asclepius</h3>
+            <p>Context-aware wearable health monitoring that streams smartwatch sensor data to a FastAPI service and detects anomalies against personalized baselines.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section reveal" id="stack">
         <div class="section-heading">
           <p class="eyebrow">Core stack</p>
@@ -77,41 +127,6 @@
           <div class="chip-card glass"><span>FastAPI</span><small>Clean backend APIs</small></div>
           <div class="chip-card glass"><span>Transformers</span><small>State-of-the-art model use</small></div>
           <div class="chip-card glass"><span>Prompt Engineering</span><small>Better alignment and output quality</small></div>
-        </div>
-      </section>
-
-      <section class="section reveal" id="projects">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2>Projects that balance technical depth with user clarity.</h2>
-        </div>
-        <div class="project-grid">
-          <article class="project-card glass">
-            <div class="project-top">
-              <span class="project-badge">AI Vehicle Search</span>
-              <a href="https://github.com/CurvedShotz/autoscout-ai" target="_blank" rel="noreferrer">Open repo</a>
-            </div>
-            <h3>AutoScout AI</h3>
-            <p>AI-powered used-car search assistant that turns natural-language requests into ranked live listings with independent risk analysis.</p>
-          </article>
-
-          <article class="project-card glass">
-            <div class="project-top">
-              <span class="project-badge">RAG Systems</span>
-              <a href="https://github.com/CurvedShotz/AI_PDF_SUMMARIZER" target="_blank" rel="noreferrer">Open repo</a>
-            </div>
-            <h3>AI PDF Summarizer</h3>
-            <p>Document QA and summarization workflow built around retrieval-augmented generation and practical LLM reasoning.</p>
-          </article>
-
-          <article class="project-card glass">
-            <div class="project-top">
-              <span class="project-badge">Wear OS · Health AI</span>
-              <a href="https://github.com/CurvedShotz/asclepius-wear-os" target="_blank" rel="noreferrer">Open repo</a>
-            </div>
-            <h3>Asclepius</h3>
-            <p>Context-aware wearable health monitoring that streams smartwatch sensor data to a FastAPI service and detects anomalies against personalized baselines.</p>
-          </article>
         </div>
       </section>
 
@@ -167,8 +182,8 @@
             <p>I'm interested in opportunities where thoughtful engineering, intelligent systems, and elegant product design come together.</p>
           </div>
           <div class="contact-links">
-            <a href="https://www.linkedin.com/in/daniel-olowe-a164b1239/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/CurvedShotz" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/daniel-olowe-a164b1239/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/CurvedShotz" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="mailto:comfortolowe3@gmail.com">Email</a>
           </div>
         </div>
